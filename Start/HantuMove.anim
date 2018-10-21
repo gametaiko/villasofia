@@ -238,4 +238,28 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: PlaySound
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 8857a980fb3a0434691fff6426267a8a,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.016666668
+    functionName: PlaySoundLocal
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: ec94103814a36428eae8c8ba0ca252e1,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.033333335
+    functionName: PlaySound
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 9155141bf7c1144b49fbd8b4d5c7a681,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
