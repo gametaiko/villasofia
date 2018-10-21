@@ -21,6 +21,11 @@ public class Hantu : MonoBehaviour {
         GetComponent<AudioSource>().PlayOneShot(ac);
     }
 
+    public void StopSound()
+    {
+        GetComponent<AudioSource>().Stop();
+    }
+
     public void PlaySoundLocal(int index)
     {
         audiosource[index].Play();
