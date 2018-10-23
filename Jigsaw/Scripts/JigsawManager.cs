@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 
 public class JigsawManager : MonoBehaviour {
 
@@ -18,72 +17,68 @@ public class JigsawManager : MonoBehaviour {
     }
 
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag == "HandTouch")
+        if (collider.gameObject.tag == "layer1")
         {
-            if (activateme)
+            if (activateme == false)
             {
-                if (gameObject.tag == "layer1")
-                {
-                    layer1.SetActive(false);
-                }
-                else
-                {
-                    layer1.SetActive(true);
-                    Destroy(Pieces1);
-                    Debug.Log("Pieces active");
-                }
-            }
-            else if (activateme)
-            {
-                if (gameObject.tag == "layer2")
-                {
-                    layer2.SetActive(false);
-                }
-                else
-                {
-                    layer2.SetActive(true);
-                    Destroy(Pieces2);
-                    Debug.Log("Pieces active");
-                }
-            }
-            else if (activateme)
-            {
-                if (gameObject.tag == "layer3")
-                {
-                    layer3.SetActive(false);
-                }
-                else
-                {
-                    layer3.SetActive(true);
-                    Destroy(Pieces3);
-                    Debug.Log("Pieces active");
-                }
-            }
-            else if (activateme)
-            {
-                if (gameObject.tag == "layer4")
-                {
-                    layer4.SetActive(false);
-                }
-                else
-                {
-                    layer4.SetActive(true);
-                    Destroy(Pieces4);
-                    Debug.Log("Pieces active");
-                }
+                layer1.SetActive(false);
             }
             else
             {
-                //you lose, ghost come closer
+                layer1.SetActive(true);
+                
             }
+            Destroy(Pieces1);
+        }
+        else if (collider.gameObject.tag == "layer2")
+        {
+            if (activateme == false)
+            {
+                layer2.SetActive(false);
+            }
+            else
+            {
+                layer2.SetActive(true);
+                
+            }
+            Destroy(Pieces2);
+        }
+        else if (collider.gameObject.tag == "layer3")
+        {
+            if (activateme == false)
+            {
+                layer3.SetActive(false);
+            }
+            else
+            {
+                layer3.SetActive(true);
 
+            }
+            Destroy(Pieces3);
+        }
+        else if (collider.gameObject.tag == "layer4")
+        {
+            if (activateme == false)
+            {
+                layer4.SetActive(false);
+            }
+            else
+            {
+                layer4.SetActive(true);
+
+            }
+            Destroy(Pieces4);
+        }
+        else
+        {
+            //you lose, ghost come closer
         }
         
     }
 
-    //void CheckActivePieces()
+    //void CheckActivePieces() //winning condition
     //{
     //    //if all pieces is active you win
     //    if(gameObject.tag == "layer1" && gameObject.tag == "layer2" && gameObject.tag == "layer3" && gameObject.tag == "layer4")
