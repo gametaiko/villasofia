@@ -21,30 +21,30 @@ public class Valve4Rotate : MonoBehaviour
 
     private void OnMouseDown()
     {
-        CheckPrevious();
-        if (rotatable)
-        {
-            if (gameObject.tag == "Valve4")
-            {
-                StartCoroutine(RotateAround(Vector3.left, 90.0f, 1.0f));
-                RotateCount();
-                CheckPosition();
-                AudioSource squeak = GetComponent<AudioSource>();
-                squeak.Play();
-            }
-        }
-        else
-        {
-            print("YOU LOSE!");
-            //Steam effect and reset stage
-        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Hand")
         {
-            print("EEK! HAND TOUCHED VALVE!");
+            CheckPrevious();
+            if (rotatable)
+            {
+                if (gameObject.tag == "Valve4")
+                {
+                    StartCoroutine(RotateAround(Vector3.left, 90.0f, 1.0f));
+                    RotateCount();
+                    CheckPosition();
+                    AudioSource squeak = GetComponent<AudioSource>();
+                    squeak.Play();
+                }
+            }
+            else
+            {
+                print("YOU LOSE!");
+                //Steam effect and reset stage
+            }
         }
     }
 

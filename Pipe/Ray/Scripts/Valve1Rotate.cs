@@ -12,21 +12,21 @@ public class Valve1Rotate : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        if (gameObject.tag == "Valve1")
-        {
-            StartCoroutine(RotateAround(Vector3.left, 90.0f, 1.0f));
-            RotateCount();
-            CheckPosition();
-            AudioSource squeak = GetComponent<AudioSource>();
-            squeak.Play();
-        }
+       
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Hand")
         {
-            print("EEK! HAND TOUCHED VALVE!");
+            if (gameObject.tag == "Valve1")
+            {
+                StartCoroutine(RotateAround(Vector3.left, 90.0f, 1.0f));
+                RotateCount();
+                CheckPosition();
+                AudioSource squeak = GetComponent<AudioSource>();
+                squeak.Play();
+            }
         }
     }
 

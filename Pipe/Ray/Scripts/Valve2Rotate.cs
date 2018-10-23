@@ -17,35 +17,53 @@ public class Valve2Rotate : MonoBehaviour
         valve = valve1.GetComponent<Valve1Rotate>();
     }
 
-    private void OnMouseDown()
-    {
-        CheckPrevious();
-            print(rotatable);
-        if (rotatable)
-        {
-            if (gameObject.tag == "Valve2")
-            {
-                StartCoroutine(RotateAround(Vector3.left, 90.0f, 1.0f));
+    //private void OnMouseDown()
+    //{
+    //    CheckPrevious();
+    //        print(rotatable);
+    //    if (rotatable)
+    //    {
+    //        if (gameObject.tag == "Valve2")
+    //        {
+    //            StartCoroutine(RotateAround(Vector3.left, 90.0f, 1.0f));
                 
-                RotateCount();
-                CheckPosition();
-                AudioSource squeak = GetComponent<AudioSource>();
-                squeak.Play();
-            }
-        }
-        else
-        {
-            print("YOU LOSE!");
-            //Sound effect
-        }
-    }
+    //            RotateCount();
+    //            CheckPosition();
+    //            AudioSource squeak = GetComponent<AudioSource>();
+    //            squeak.Play();
+    //        }
+    //    }
+    //    else
+    //    {
+    //        print("YOU LOSE!");
+    //        //Sound effect
+    //    }
+    //}
 
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Hand")
         {
-            print("EEK! HAND TOUCHED VALVE!");
+            CheckPrevious();
+            print(rotatable);
+            if (rotatable)
+            {
+                if (gameObject.tag == "Valve2")
+                {
+                    StartCoroutine(RotateAround(Vector3.left, 90.0f, 1.0f));
+
+                    RotateCount();
+                    CheckPosition();
+                    AudioSource squeak = GetComponent<AudioSource>();
+                    squeak.Play();
+                }
+            }
+            else
+            {
+                print("YOU LOSE!");
+                //Sound effect
+            }
         }
     }
 
