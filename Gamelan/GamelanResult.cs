@@ -80,7 +80,7 @@ public class GamelanResult : MonoBehaviour {
         if (gameObject.name == "gamelan2")
         {
             gamelan3.Play();
-            
+
             print("Gamelan3");
         }
 
