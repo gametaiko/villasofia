@@ -2,92 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GamelanMain : MonoBehaviour {
 
-    //public Animator gamelanAnim;
-    //public AudioSource gamelan;
+    public UnityEvent OnClick = new UnityEvent();
+    public GameObject thisGamelan;
+    public Animator gamelanAnim;
 
-    //store music in array
-    public AudioSource[] you;
-
-    private void Start()
+    void Start()
     {
-        you = new AudioSource[20];
+        thisGamelan = this.gameObject;
     }
 
-    private void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        for (int i = 0; i <= you.Length; i++)
+        if (collision.gameObject.name == "Left" || collision.gameObject.name == "Right")
         {
-            you[i].Play();
+            StartCoroutine(OnClickAnim());
+            OnClick.Invoke();
+            print("Hit");
         }
     }
 
-    //public void OnMouseDown()
-    //{
-    //    if (gameObject.name == "gamelan0")
-    //    {
-    //        gamelan.Play();
-    //        StartCoroutine(OnClickAnim());
-    //        print("Gamelan1");
-    //    }
-
-    //    if (gameObject.name == "gamelan1")
-    //    {
-    //        gamelan.Play();
-    //        StartCoroutine(OnClickAnim());
-    //        print("Gamelan2");
-    //    }
-
-    //    if (gameObject.name == "gamelan2")
-    //    {
-    //        gamelan.Play();
-    //        StartCoroutine(OnClickAnim());
-    //        print("Gamelan3");
-    //    }
-
-    //    if (gameObject.name == "gamelan3")
-    //    {
-    //        gamelan.Play();
-    //        StartCoroutine(OnClickAnim());
-    //        print("Gamelan4");
-    //    }
-
-    //    if (gameObject.name == "gamelan4")
-    //    {
-    //        gamelan.Play();
-    //        StartCoroutine(OnClickAnim());
-    //        print("Gamelan5");
-    //    }
-
-    //    if (gameObject.name == "gamelan5")
-    //    {
-    //        gamelan.Play();
-    //        StartCoroutine(OnClickAnim());
-    //        print("Gamelan6");
-    //    }
-
-    //    if (gameObject.name == "gamelan6")
-    //    {
-    //        gamelan.Play();
-    //        StartCoroutine(OnClickAnim());
-    //        print("Gamelan7");
-    //    }
-
-    //    if (gameObject.name == "gamelan7")
-    //    {
-    //        gamelan.Play();
-    //        StartCoroutine(OnClickAnim());
-    //        print("Gamelan8");
-    //    }
-    //}
-
-    //IEnumerator OnClickAnim()
-    //{
-    //    gamelanAnim.SetBool("Click", true);
-    //    yield return new WaitForSeconds(.1f);
-    //    gamelanAnim.SetBool("Click", false);
-    //}
-
+    IEnumerator OnClickAnim()
+    {
+        gamelanAnim.SetBool("Click", true);
+        yield return new WaitForSeconds(.1f);
+        gamelanAnim.SetBool("Click", false);
+    }
 }

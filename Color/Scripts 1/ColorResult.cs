@@ -38,29 +38,6 @@ public class ColorResult : MonoBehaviour {
         result += bowl[index];
     }
 
-    //void Update()
-    //{
-    //    switch (gameObject.name)
-    //    {
-    //        case "Red":
-    //            ResultColor(0);
-    //            red.Play();
-    //            //run some magic smoke etc...
-    //            break;
-    //        case "Green":
-    //            ResultColor(1);
-    //            green.Play();
-    //            //run some magic smoke etc...
-    //            break;
-    //        case "Blue":
-    //            print("Ddaeng!");
-    //            break;
-    //        default:
-    //            print("Ddaeng!");
-    //            break;
-    //    }
-    //}
-
     void Update()
     {
         if (currentQuestion == 0)
