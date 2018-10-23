@@ -32,7 +32,7 @@ public class Valve3Rotate : MonoBehaviour
             {
                 if (gameObject.tag == "Valve3")
                 {
-                    StartCoroutine(RotateAround(Vector3.left, 90.0f, 1.0f));
+                    StartCoroutine(RotateAround(Vector3.forward, 90.0f, 1.0f));
 
                     RotateCount();
                     CheckPosition();
