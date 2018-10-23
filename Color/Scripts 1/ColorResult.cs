@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ColorResult : MonoBehaviour {
-    
+
+    public ParticleSystem blue;
+    public ParticleSystem red;
+    public ParticleSystem green;
+
     int currentQuestion;
     int winScore = 0;
     Color[] bowl;
@@ -34,18 +38,43 @@ public class ColorResult : MonoBehaviour {
         result += bowl[index];
     }
 
+    //void Update()
+    //{
+    //    switch (gameObject.name)
+    //    {
+    //        case "Red":
+    //            ResultColor(0);
+    //            red.Play();
+    //            //run some magic smoke etc...
+    //            break;
+    //        case "Green":
+    //            ResultColor(1);
+    //            green.Play();
+    //            //run some magic smoke etc...
+    //            break;
+    //        case "Blue":
+    //            print("Ddaeng!");
+    //            break;
+    //        default:
+    //            print("Ddaeng!");
+    //            break;
+    //    }
+    //}
+
     void Update()
     {
-        if(currentQuestion == 0)
+        if (currentQuestion == 0)
         //magenta
         {
             switch (gameObject.name)
             {
                 case "Red":
                     ResultColor(0);
+                    //run some magic smoke etc...
                     break;
                 case "Green":
                     ResultColor(1);
+                    //run some magic smoke etc...
                     break;
                 case "Blue":
                     print("Ddaeng!");
@@ -55,7 +84,7 @@ public class ColorResult : MonoBehaviour {
                     break;
             }
 
-            if(result == new Color(1, 0, 1))
+            if (result == new Color(1, 0, 1))
             {
                 //put winning condition here
                 win.Play();
@@ -63,7 +92,7 @@ public class ColorResult : MonoBehaviour {
             }
         }
 
-        if(currentQuestion == 1)
+        if (currentQuestion == 1)
         //cyan
         {
             switch (gameObject.name)
@@ -74,9 +103,11 @@ public class ColorResult : MonoBehaviour {
                     break;
                 case "Green":
                     ResultColor(1);
+                    //run some magic smoke etc...
                     break;
                 case "Blue":
                     ResultColor(2);
+                    //run some magic smoke etc...
                     break;
                 default:
                     print("Ddaeng!");
@@ -98,10 +129,12 @@ public class ColorResult : MonoBehaviour {
             {
                 case "Red":
                     ResultColor(0);
+                    //run some magic smoke etc...
                     //print("Ddaeng!");
                     break;
                 case "Green":
                     ResultColor(1);
+                    //run some magic smoke etc...
                     break;
                 case "Blue":
                     print("Ddaeng!");
