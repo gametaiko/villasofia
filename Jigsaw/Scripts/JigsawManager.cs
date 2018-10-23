@@ -10,130 +10,94 @@ public class JigsawManager : MonoBehaviour {
 
     public Button Pieces1, Pieces2, Pieces3, Pieces4;
     public GameObject layer1, layer2, layer3, layer4;
-    public bool activateme;
+    public bool activateme = false;
 
     void Start()
     {
-        //Button btn1 = Pieces1.GetComponent<Button>();
-        //Button btn2 = Pieces2.GetComponent<Button>();
-        //Button btn3 = Pieces3.GetComponent<Button>();
-        //Button btn4 = Pieces4.GetComponent<Button>();
-
-        //Calls the Task when you click the Button
-        //btn1.onClick.AddListener(Button1Task);
-        //btn2.onClick.AddListener(Button2Task);
-        //btn3.onClick.AddListener(Button3Task);
-        //btn4.onClick.AddListener(Button4Task);
-
-        //StartCoroutine("Wait");
+        //CheckActivePieces();
     }
+
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "layer1")
+        if (collision.gameObject.tag == "HandTouch")
         {
-            if (activateme == false)
+            if (activateme)
             {
-                layer1.SetActive(false);
+                if (gameObject.tag == "layer1")
+                {
+                    layer1.SetActive(false);
+                }
+                else
+                {
+                    layer1.SetActive(true);
+                    Destroy(Pieces1);
+                    Debug.Log("Pieces active");
+                }
+            }
+            else if (activateme)
+            {
+                if (gameObject.tag == "layer2")
+                {
+                    layer2.SetActive(false);
+                }
+                else
+                {
+                    layer2.SetActive(true);
+                    Destroy(Pieces2);
+                    Debug.Log("Pieces active");
+                }
+            }
+            else if (activateme)
+            {
+                if (gameObject.tag == "layer3")
+                {
+                    layer3.SetActive(false);
+                }
+                else
+                {
+                    layer3.SetActive(true);
+                    Destroy(Pieces3);
+                    Debug.Log("Pieces active");
+                }
+            }
+            else if (activateme)
+            {
+                if (gameObject.tag == "layer4")
+                {
+                    layer4.SetActive(false);
+                }
+                else
+                {
+                    layer4.SetActive(true);
+                    Destroy(Pieces4);
+                    Debug.Log("Pieces active");
+                }
             }
             else
             {
-                layer1.SetActive(true);
+                //you lose, ghost come closer
             }
+
         }
-       else if (collision.gameObject.tag == "layer2")
-        {
-            if (activateme == false)
-            {
-                layer2.SetActive(false);
-            }
-            else
-            {
-                layer2.SetActive(true);
-            }
-        }
-        else if (collision.gameObject.tag == "layer3")
-        {
-            if (activateme == false)
-            {
-                layer3.SetActive(false);
-            }
-            else
-            {
-                layer3.SetActive(true);
-            }
-        }
-        else if (collision.gameObject.tag == "layer4")
-        {
-            if (activateme == false)
-            {
-                layer4.SetActive(false);
-            }
-            else
-            {
-                layer4.SetActive(true);
-            }
-        }
-        else
-        {
-            //gameOver
-        }
+        
     }
 
-    //void Button1Task()
+    //void CheckActivePieces()
     //{
-    //    if (activateme == false)
+    //    //if all pieces is active you win
+    //    if(gameObject.tag == "layer1" && gameObject.tag == "layer2" && gameObject.tag == "layer3" && gameObject.tag == "layer4")
     //    {
-    //        layer1.SetActive(false);
-    //    }
-    //    else
-    //    {
-    //        layer1.SetActive(true);
-    //    }
-
-    //}
-
-    //void Button2Task()
-    //{
-    //    if (activateme == false)
-    //    {
-    //        layer2.SetActive(false);
-    //    }
-    //    else
-    //    {
-    //        layer2.SetActive(true);
-    //    }
-
-    //}
-    //void Button3Task()
-    //{
-    //    if (activateme == false)
-    //    {
-    //        layer3.SetActive(false);
-    //    }
-    //    else
-    //    {
-    //        layer3.SetActive(true);
-    //    }
-
-    //}
-    //void Button4Task()
-    //{
-    //    if (activateme == false)
-    //    {
-    //        layer4.SetActive(false);
-    //    }
-    //    else
-    //    {
-    //        layer4.SetActive(true);
+    //        //if all pieces is active you win
+    //        //StartCoroutine("Wait");
     //    }
     //}
 
-    //IEnumerator Wait()
+    //private IEnumerator Wait()
     //{
-    //    yield return new WaitForSeconds(2.0f);
+    //    yield return new WaitForSeconds(3.0f);
 
-    //    SceneManager.LoadScene("Room3");
+    //    SceneManager.LoadScene("");
+
     //}
-
 }
