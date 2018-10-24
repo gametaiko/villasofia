@@ -23,12 +23,12 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer1.SetActive(false);
-                Destroy(collider.gameObject);
+                
             }
             else
             {
                 layer1.SetActive(true);
-               
+                Destroy(collider.gameObject);
             }
 
         }
@@ -37,12 +37,12 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer2.SetActive(false);
-                Destroy(collider.gameObject);
+                
             }
             else
             {
                 layer2.SetActive(true);
-              
+                Destroy(collider.gameObject);
             }
             
         }
@@ -51,12 +51,12 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer3.SetActive(false);
-                Destroy(collider.gameObject);
+                
             }
             else
             {
                 layer3.SetActive(true);
-                
+                Destroy(collider.gameObject);
             }
         }
         else if (collider.gameObject.tag == "layer4")
@@ -64,12 +64,12 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer4.SetActive(false);
-                Destroy(collider.gameObject);
+                
             }
             else
             {
                 layer4.SetActive(true);
-                
+                Destroy(collider.gameObject);
             }
         }
         else
