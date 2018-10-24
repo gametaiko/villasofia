@@ -10,11 +10,11 @@ public class Valve1Rotate : MonoBehaviour {
     public int count;
     private AudioSource audiosource;
     public Animator anim;
-    
+    public GameObject test;
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = test.GetComponent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
