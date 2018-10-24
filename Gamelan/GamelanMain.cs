@@ -7,13 +7,14 @@ using UnityEngine.Events;
 public class GamelanMain : MonoBehaviour {
 
     public UnityEvent OnClick = new UnityEvent();
+
+    GameObject[] nGamelan = new GameObject[10];
     public GameObject thisGamelan;
     public Animator gamelanAnim;
     public AudioSource gamelan;
 
     private void Start()
     {
-
         thisGamelan = this.gameObject;
     }
 
@@ -28,56 +29,56 @@ public class GamelanMain : MonoBehaviour {
             {
                 OnClick.Invoke();
                 gamelan.Play();
-                print("Gamelan1");
+                nGamelan[0] = this.gameObject;
             }
 
             if (gameObject.name == "gamelan1")
             {
                 OnClick.Invoke();
                 gamelan.Play();
-                print("Gamelan2");
+                nGamelan[1] = this.gameObject;
             }
 
             if (gameObject.name == "gamelan2")
             {
                 OnClick.Invoke();
                 gamelan.Play();
-                print("Gamelan3");
+                nGamelan[2] = this.gameObject;
             }
 
             if (gameObject.name == "gamelan3")
             {
                 OnClick.Invoke();
                 gamelan.Play();
-                print("Gamelan4");
+                nGamelan[3] = this.gameObject;
             }
 
             if (gameObject.name == "gamelan4")
             {
                 OnClick.Invoke();
                 gamelan.Play();
-                print("Gamelan5");
+                nGamelan[4] = this.gameObject;
             }
 
             if (gameObject.name == "gamelan5")
             {
                 OnClick.Invoke();
                 gamelan.Play();
-                print("Gamelan6");
+                nGamelan[5] = this.gameObject;
             }
 
             if (gameObject.name == "gamelan6")
             {
                 OnClick.Invoke();
                 gamelan.Play();
-                print("Gamelan7");
+                nGamelan[6] = this.gameObject;
             }
 
             if (gameObject.name == "gamelan7")
             {
                 OnClick.Invoke();
                 gamelan.Play();
-                print("Gamelan8");
+                nGamelan[7] = this.gameObject;
             }
         }
     }
@@ -88,4 +89,12 @@ public class GamelanMain : MonoBehaviour {
         yield return new WaitForSeconds(.1f);
         gamelanAnim.SetBool("Click", false);
     }
+
+    //private void Update()
+    //{
+    //    for (int i = 0; i < 10; i++)
+    //    {
+    //        print(nGamelan[i].name);
+    //    }
+    //}
 }
