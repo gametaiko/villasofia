@@ -23,11 +23,12 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer1.SetActive(false);
+                Destroy(collider.gameObject.GetComponent<Collider>());
             }
             else
             {
                 layer1.SetActive(true);
-               // Destroy(gameObject.GetComponent<Collider>());
+               
             }
 
         }
@@ -36,11 +37,12 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer2.SetActive(false);
+                Destroy(collider.gameObject.GetComponent<Collider>());
             }
             else
             {
                 layer2.SetActive(true);
-               // Destroy(gameObject.GetComponent<Collider>());
+              
             }
             
         }
@@ -49,11 +51,12 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer3.SetActive(false);
+                Destroy(collider.gameObject.GetComponent<Collider>());
             }
             else
             {
                 layer3.SetActive(true);
-               // Destroy(gameObject.GetComponent<Collider>());
+                
             }
         }
         else if (collider.gameObject.tag == "layer4")
@@ -61,11 +64,12 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer4.SetActive(false);
+                Destroy(collider.gameObject.GetComponent<Collider>());
             }
             else
             {
                 layer4.SetActive(true);
-                //Destroy(gameObject.GetComponent<Collider>());
+                
             }
         }
         else
@@ -78,7 +82,7 @@ public class JigsawManager : MonoBehaviour {
     void CheckActivePieces() //winning condition
     {
         //if all pieces is active you win
-        if (layer1.activeInHierarchy == false && layer2.activeInHierarchy == false && layer3.activeInHierarchy == false && layer4.activeInHierarchy == false)
+        if (layer1.activeInHierarchy == true && layer2.activeInHierarchy == true && layer3.activeInHierarchy == true && layer4.activeInHierarchy == true)
         {
             print("youWin");//if all pieces is active you win
            // StartCoroutine("Wait");
