@@ -6,9 +6,11 @@ public class Valve3Rotate : MonoBehaviour
 {
     public string position;
     public int count;
-    //public bool nextIsRotatable = false;
     public bool rotatable = false;
     public Valve2Rotate any;
+
+    public Animator anim;
+    public GameObject test;
 
     Valve2Rotate valve;
 
@@ -16,11 +18,7 @@ public class Valve3Rotate : MonoBehaviour
     {
         GameObject valve2 = GameObject.Find("polySurface16");
         valve = valve2.GetComponent<Valve2Rotate>();
-    }
-
-    private void OnMouseDown()
-    {
-        
+        anim = test.GetComponent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -86,6 +84,7 @@ public class Valve3Rotate : MonoBehaviour
         {
             position = "right";
             print("Valve 3 is in right position!");
+            anim.SetBool("stop", true);
         }
         if (count == 2)
         {

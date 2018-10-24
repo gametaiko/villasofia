@@ -7,14 +7,17 @@ public class Valve2Rotate : MonoBehaviour
     public string position;
     public int count;
     public bool rotatable = false;
+    public Animator anim;
+    public GameObject test;
 
-    //public Valve1Rotate any;
+  
     Valve1Rotate valve;
 
     private void Start()
     {
         GameObject valve1 = GameObject.Find("polySurface11");
         valve = valve1.GetComponent<Valve1Rotate>();
+        anim = test.GetComponent<Animator>();
     }
 
  
@@ -92,6 +95,7 @@ public class Valve2Rotate : MonoBehaviour
         {
             position = "left";
             print("Valve 2 is in left position!");
+            anim.SetBool("stop", true);
         }
     }
 

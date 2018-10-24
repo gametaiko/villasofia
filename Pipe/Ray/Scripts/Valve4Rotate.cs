@@ -11,17 +11,16 @@ public class Valve4Rotate : MonoBehaviour
     public Valve3Rotate any;
     Valve3Rotate valve;
 
+    public Animator anim;
+    public GameObject test;
+
 
 
     private void Start()
     {
         GameObject valve3 = GameObject.Find("polySurface18");
         valve = valve3.GetComponent<Valve3Rotate>();
-    }
-
-    private void OnMouseDown()
-    {
-        
+        anim = test.GetComponent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -94,6 +93,7 @@ public class Valve4Rotate : MonoBehaviour
         {
             position = "left";
             print("Valve 4 is in left position!");
+            anim.SetBool("stop", true);
         }
     }
 
