@@ -9,10 +9,12 @@ public class Valve1Rotate : MonoBehaviour {
     public string position;
     public int count;
     private AudioSource audiosource;
+    public Animator anim;
+    
 
-    private void OnMouseDown()
+    private void Start()
     {
-       
+        anim = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -71,6 +73,8 @@ public class Valve1Rotate : MonoBehaviour {
         {
             position = "down";
             print("Valve 1 is in down position!");
+            //trigger gushDisappear Animation
+            anim.SetBool("stop", true);
         }
         if (count == 3)
         {
