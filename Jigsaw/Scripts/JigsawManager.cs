@@ -16,7 +16,6 @@ public class JigsawManager : MonoBehaviour {
         //CheckActivePieces();
     }
 
-
     public void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "layer1")
@@ -28,9 +27,9 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer1.SetActive(true);
-                
+                Destroy(gameObject.GetComponent<Collider>());
             }
-            Destroy(Pieces1);
+
         }
         else if (collider.gameObject.tag == "layer2")
         {
@@ -41,9 +40,9 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer2.SetActive(true);
-                
+                Destroy(gameObject.GetComponent<Collider>());
             }
-            Destroy(Pieces2);
+            
         }
         else if (collider.gameObject.tag == "layer3")
         {
@@ -54,9 +53,8 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer3.SetActive(true);
-
+                Destroy(gameObject.GetComponent<Collider>());
             }
-            Destroy(Pieces3);
         }
         else if (collider.gameObject.tag == "layer4")
         {
@@ -67,9 +65,8 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer4.SetActive(true);
-
+                Destroy(gameObject.GetComponent<Collider>());
             }
-            Destroy(Pieces4);
         }
         else
         {
@@ -78,15 +75,19 @@ public class JigsawManager : MonoBehaviour {
         
     }
 
-    //void CheckActivePieces() //winning condition
-    //{
-    //    //if all pieces is active you win
-    //    if(gameObject.tag == "layer1" && gameObject.tag == "layer2" && gameObject.tag == "layer3" && gameObject.tag == "layer4")
-    //    {
-    //        //if all pieces is active you win
-    //        //StartCoroutine("Wait");
-    //    }
-    //}
+    void CheckActivePieces() //winning condition
+    {
+        //if all pieces is active you win
+        if (layer1.activeInHierarchy == true && layer2.activeInHierarchy == true && layer3.activeInHierarchy == true && layer4.activeInHierarchy == true)
+        {
+            print("youWin");//if all pieces is active you win
+           // StartCoroutine("Wait");
+        }
+        else
+        {
+            print("please find more photo");
+        }
+    }
 
     //private IEnumerator Wait()
     //{
