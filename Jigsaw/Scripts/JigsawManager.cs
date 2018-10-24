@@ -23,7 +23,7 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer1.SetActive(false);
-                Destroy(collider.gameObject.GetComponent<Collider>());
+                Destroy(collider.gameObject);
             }
             else
             {
@@ -37,7 +37,7 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer2.SetActive(false);
-                Destroy(collider.gameObject.GetComponent<Collider>());
+                Destroy(collider.gameObject);
             }
             else
             {
@@ -51,7 +51,7 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer3.SetActive(false);
-                Destroy(collider.gameObject.GetComponent<Collider>());
+                Destroy(collider.gameObject);
             }
             else
             {
@@ -64,7 +64,7 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer4.SetActive(false);
-                Destroy(collider.gameObject.GetComponent<Collider>());
+                Destroy(collider.gameObject);
             }
             else
             {
