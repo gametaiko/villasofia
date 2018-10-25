@@ -16,11 +16,6 @@ public class JigsawManager : MonoBehaviour {
     public bool isWin = false;
 
 
-    //void Start()
-    //{
-    //    CheckActivePieces();
-    //}
-
     private void Update()
     {
         CheckActivePieces();
@@ -38,8 +33,7 @@ public class JigsawManager : MonoBehaviour {
             {
                 layer1.SetActive(false);
                 particle.SetActive(false);
-                
-                
+               
             }
             else
             {
