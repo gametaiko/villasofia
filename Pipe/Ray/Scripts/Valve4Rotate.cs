@@ -8,12 +8,11 @@ public class Valve4Rotate : MonoBehaviour
     public int count;
     public bool rotatable = false;
 
-    public Valve3Rotate any;
     Valve3Rotate valve;
 
     public Animator anim;
     public GameObject test;
-
+    public AudioSource aud1;
 
 
     private void Start()
@@ -94,6 +93,9 @@ public class Valve4Rotate : MonoBehaviour
             position = "left";
             print("Valve 4 is in left position!");
             anim.SetBool("stop", true);
+            IEnumerator fadeSound1 = SoundFade.FadeOut(aud1, 0.5f);
+            StartCoroutine(fadeSound1);
+            gameObject.GetComponent<MeshCollider>().enabled = false;
         }
     }
 

@@ -75,12 +75,11 @@ public class Valve1Rotate : MonoBehaviour {
         {
             position = "down";
             print("Valve 1 is in down position!");
-            //trigger gushDisappear Animation
             anim.SetBool("stop", true);
 
             IEnumerator fadeSound1 = SoundFade.FadeOut(aud1, 0.5f);
             StartCoroutine(fadeSound1);
-            //StopCoroutine(fadeSound1);
+            gameObject.GetComponent<MeshCollider>().enabled = false;
         }
         if (count == 3)
         {
