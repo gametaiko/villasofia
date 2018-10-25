@@ -11,13 +11,23 @@ public class JigsawManager : MonoBehaviour {
     public GameObject layer1, layer2, layer3, layer4, Wrong1;
     public bool activateme = false;
 
-    public AudioClip sound;
     public AudioSource soundSource;
 
+    public bool isWin = false;
 
-    void Start()
+
+    //void Start()
+    //{
+    //    CheckActivePieces();
+    //}
+
+    private void Update()
     {
         CheckActivePieces();
+        if(isWin == true)
+        {
+            print("You WIN!");
+        }
     }
 
     public void OnTriggerEnter(Collider collider)
@@ -103,7 +113,8 @@ public class JigsawManager : MonoBehaviour {
         //if all pieces is active you win
         if (layer1.activeInHierarchy == true && layer2.activeInHierarchy == true && layer3.activeInHierarchy == true && layer4.activeInHierarchy == true)
         {
-            print("youWin");//if all pieces is active you win
+            
+            isWin = true;//if all pieces is active you win
            // StartCoroutine("Wait");
         }
         else
