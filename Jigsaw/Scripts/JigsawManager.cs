@@ -9,6 +9,7 @@ public class JigsawManager : MonoBehaviour {
 
     public Button Pieces1, Pieces2, Pieces3, Pieces4;
     public GameObject layer1, layer2, layer3, layer4;
+    public GameObject DustCloud;
     public bool activateme = false;
 
     void Start()
@@ -28,6 +29,7 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer1.SetActive(true);
+                Instantiate(DustCloud, transform.position, DustCloud.transform.rotation);
                 Destroy(collider.gameObject);
             }
 
@@ -42,6 +44,7 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer2.SetActive(true);
+                Instantiate(DustCloud, transform.position, DustCloud.transform.rotation);
                 Destroy(collider.gameObject);
             }
             
@@ -56,6 +59,7 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer3.SetActive(true);
+                Instantiate(DustCloud, transform.position, DustCloud.transform.rotation);
                 Destroy(collider.gameObject);
             }
         }
@@ -69,6 +73,7 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer4.SetActive(true);
+                Instantiate(DustCloud, transform.position, DustCloud.transform.rotation);
                 Destroy(collider.gameObject);
             }
         }
