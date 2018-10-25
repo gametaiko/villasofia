@@ -27,7 +27,7 @@ public class JigsawManager : MonoBehaviour {
 
     public void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "layer1")
+        if (collider.gameObject.tag == "layer1" )
         {
             if (activateme == false)
             {
