@@ -13,11 +13,9 @@ public class ColorResult : MonoBehaviour {
     int winScore = 0;
     Color[] bowl;
     Color result;
-    public AudioSource win;
 
     void Start()
     {
-        win = GetComponent<AudioSource>();
         result = new Color(0, 0, 0);
         currentQuestion = ColorQuestion.questionIndex;
         bowl = new Color[3];
@@ -64,7 +62,7 @@ public class ColorResult : MonoBehaviour {
             if (result == new Color(1, 0, 1))
             {
                 //put winning condition here
-                win.Play();
+                //animation do something
                 //StartCoroutine(ChangeScene());
             }
         }
@@ -94,7 +92,7 @@ public class ColorResult : MonoBehaviour {
             if (result == new Color(0, 1, 1))
             {
                 //put winning condition here
-                win.Play();
+                //animation do something
                 //StartCoroutine(ChangeScene());
             }
         }
@@ -125,7 +123,7 @@ public class ColorResult : MonoBehaviour {
             if (result == new Color(1, 1, 0))
             {
                 //put winning condition here
-                win.Play();
+                //animation do somethings
                 //StartCoroutine(ChangeScene());
             }
         }
