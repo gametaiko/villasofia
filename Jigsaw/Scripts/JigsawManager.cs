@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class JigsawManager : MonoBehaviour {
 
     public Button Pieces1, Pieces2, Pieces3, Pieces4;
-    public GameObject layer1, layer2, layer3, layer4, Wrong1;
+    public GameObject layer1, layer2, layer3, layer4, Wrong1, particle;
     public bool activateme = false;
 
     public AudioSource soundSource;
@@ -37,11 +37,14 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer1.SetActive(false);
+                particle.SetActive(false);
+                
                 
             }
             else
             {
                 layer1.SetActive(true);
+                particle.SetActive(true);
                 soundSource.Play();
                 Destroy(collider.gameObject);
             }
@@ -52,11 +55,13 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer2.SetActive(false);
-                
+                particle.SetActive(false);
+
             }
             else
             {
                 layer2.SetActive(true);
+                particle.SetActive(true);
                 soundSource.Play();
                 Destroy(collider.gameObject);
             }
@@ -67,11 +72,13 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer3.SetActive(false);
-                
+                particle.SetActive(false);
+
             }
             else
             {
                 layer3.SetActive(true);
+                particle.SetActive(true);
                 soundSource.Play();
                 Destroy(collider.gameObject);
             }
@@ -81,11 +88,13 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 layer4.SetActive(false);
-                
+                particle.SetActive(false);
+
             }
             else
             {
                 layer4.SetActive(true);
+                particle.SetActive(true);
                 soundSource.Play();
                 Destroy(collider.gameObject);
             }
@@ -96,11 +105,13 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 Wrong1.SetActive(false);
+                particle.SetActive(false);
 
             }
             else
             {
                 Wrong1.SetActive(true);
+                particle.SetActive(true);
                 soundSource.Play();
                 Destroy(collider.gameObject);
             }
