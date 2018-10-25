@@ -6,6 +6,7 @@ public class GamelanHit : MonoBehaviour {
 
     public List<int> WhichGamelan = new List<int>();
     public List<int> MusicSheet = new List<int>();
+    public AudioSource wrong;
 
     public void GetGamelan(int hit)
     {
@@ -20,6 +21,7 @@ public class GamelanHit : MonoBehaviour {
         {
             if(WhichGamelan[i] != MusicSheet[i])
             {
+                wrong.Play();
                 print("Lose");
                 return false;
             }

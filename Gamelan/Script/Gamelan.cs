@@ -15,10 +15,20 @@ public class Gamelan : MonoBehaviour {
         definedButton = this.gameObject;
     }
 
-    private void OnMouseDown()
+    private void OnCollisionEnter(Collision collision)
     {
-        gamelanSound.Play();
-        Debug.Log("Button Clicked");
-        OnClick.Invoke();
+        if(collision.gameObject.name == "stickL" || collision.gameObject.name == "stickR")
+        {
+            gamelanSound.Play();
+            Debug.Log("Button Clicked");
+            OnClick.Invoke();
+        }
     }
+
+    //private void OnMouseDown()
+    //{
+    //    gamelanSound.Play();
+    //    Debug.Log("Button Clicked");
+    //    OnClick.Invoke();
+    //}
 }
