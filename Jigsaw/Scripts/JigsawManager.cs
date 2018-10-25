@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class JigsawManager : MonoBehaviour {
 
     public Button Pieces1, Pieces2, Pieces3, Pieces4;
-    public GameObject layer1, layer2, layer3, layer4;
+    public GameObject layer1, layer2, layer3, layer4, Wrong1;
     public bool activateme = false;
 
     void Start()
@@ -72,9 +72,19 @@ public class JigsawManager : MonoBehaviour {
                 Destroy(collider.gameObject);
             }
         }
-        else
+        else if (collider.gameObject.tag == "Wrong1")
         {
-            //you lose, ghost come closer
+            //Jumpscare
+            if (activateme == false)
+            {
+                Wrong1.SetActive(false);
+
+            }
+            else
+            {
+                Wrong1.SetActive(true);
+                Destroy(collider.gameObject);
+            }
         }
         
     }
