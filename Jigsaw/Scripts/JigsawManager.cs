@@ -11,6 +11,10 @@ public class JigsawManager : MonoBehaviour {
     public GameObject layer1, layer2, layer3, layer4, Wrong1;
     public bool activateme = false;
 
+    public AudioClip sound;
+    public AudioSource soundSource;
+
+
     void Start()
     {
         CheckActivePieces();
@@ -28,6 +32,7 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer1.SetActive(true);
+                soundSource.Play();
                 Destroy(collider.gameObject);
             }
 
@@ -42,6 +47,7 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer2.SetActive(true);
+                soundSource.Play();
                 Destroy(collider.gameObject);
             }
             
@@ -56,6 +62,7 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer3.SetActive(true);
+                soundSource.Play();
                 Destroy(collider.gameObject);
             }
         }
@@ -69,6 +76,7 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 layer4.SetActive(true);
+                soundSource.Play();
                 Destroy(collider.gameObject);
             }
         }
@@ -83,6 +91,7 @@ public class JigsawManager : MonoBehaviour {
             else
             {
                 Wrong1.SetActive(true);
+                soundSource.Play();
                 Destroy(collider.gameObject);
             }
         }
