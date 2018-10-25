@@ -10,7 +10,7 @@ public class SoundFade : MonoBehaviour
 
             while (audioSource.volume > 0)
             {
-                audioSource.volume -= 0.01f * Time.deltaTime / FadeTime;
+            audioSource.volume -= 0.03f * Time.deltaTime; // FadeTime;
 
             yield return new WaitForEndOfFrame();
             }

@@ -80,7 +80,7 @@ public class Valve1Rotate : MonoBehaviour {
 
             IEnumerator fadeSound1 = SoundFade.FadeOut(aud1, 0.5f);
             StartCoroutine(fadeSound1);
-            StopCoroutine(fadeSound1);
+            //StopCoroutine(fadeSound1);
         }
         if (count == 3)
         {
