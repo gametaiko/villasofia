@@ -10,9 +10,9 @@ public class SoundFade : MonoBehaviour
 
             while (audioSource.volume > 0)
             {
-                audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+                audioSource.volume -= 0.01f * Time.deltaTime / FadeTime;
 
-                yield return null;
+            yield return new WaitForEndOfFrame();
             }
 
             audioSource.Stop();

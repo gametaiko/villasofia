@@ -8,7 +8,7 @@ public class Valve1Rotate : MonoBehaviour {
 
     public string position;
     public int count;
-    private AudioSource audiosource;
+    //private AudioSource audiosource;
     public Animator anim;
     public GameObject test;
 
