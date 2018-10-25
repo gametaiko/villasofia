@@ -50,7 +50,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1312054181309042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17fb6f484807f1842aad74442e935f73, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fb0d3869bdd4da42a14d7ef1672f528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!198 &198117451778984262
@@ -4659,7 +4659,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f607fa1043c50e648a41343da340353c, type: 2}
+  - {fileID: 2100000, guid: f61fcb8a4bee5b248861a80cd3144bef, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
