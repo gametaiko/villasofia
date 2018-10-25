@@ -12,6 +12,8 @@ public class Valve1Rotate : MonoBehaviour {
     public Animator anim;
     public GameObject test;
 
+    public AudioSource aud1;
+
     private void Start()
     {
         anim = test.GetComponent<Animator>();
@@ -75,6 +77,10 @@ public class Valve1Rotate : MonoBehaviour {
             print("Valve 1 is in down position!");
             //trigger gushDisappear Animation
             anim.SetBool("stop", true);
+
+            IEnumerator fadeSound1 = SoundFade.FadeOut(aud1, 0.5f);
+            StartCoroutine(fadeSound1);
+            StopCoroutine(fadeSound1);
         }
         if (count == 3)
         {
