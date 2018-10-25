@@ -132,8 +132,8 @@ public class PuzzleManagerCircuit : MonoBehaviour {
         //SceneManager.LoadScene("");
     }
 
-    void PlayVoice()
-    {
+    //void PlayVoice()
+    //{
 
-    }
+    //}
 }
