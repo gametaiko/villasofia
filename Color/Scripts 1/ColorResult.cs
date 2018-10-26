@@ -25,11 +25,11 @@ public class ColorResult : MonoBehaviour {
         bowl[2] = new Color(0, 0, 1); //b
     }
 
-    //IEnumerator ChangeScene(int sceneIndex)
-    //{
-    //    yield return new WaitForSeconds(1);
-    //    SceneManager.LoadScene(sceneIndex);
-    //}
+    IEnumerator ChangeScene(int sceneIndex)
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(sceneIndex);
+    }
 
     public void ResultColor(int index)
     {
@@ -63,7 +63,7 @@ public class ColorResult : MonoBehaviour {
             {
                 //put winning condition here
                 //animation do something
-                //StartCoroutine(ChangeScene());
+                StartCoroutine(ChangeScene(1));
             }
         }
 
@@ -93,7 +93,7 @@ public class ColorResult : MonoBehaviour {
             {
                 //put winning condition here
                 //animation do something
-                //StartCoroutine(ChangeScene());
+                StartCoroutine(ChangeScene(1));
             }
         }
 
@@ -124,7 +124,7 @@ public class ColorResult : MonoBehaviour {
             {
                 //put winning condition here
                 //animation do somethings
-                //StartCoroutine(ChangeScene());
+                StartCoroutine(ChangeScene(1));
             }
         }
 
