@@ -7,12 +7,14 @@ using UnityEngine.UI;
 
 public class JigsawManager : MonoBehaviour {
 
-    public Button Pieces1, Pieces2, Pieces3, Pieces4;
-    public GameObject layer1, layer2, layer3, layer4, Wrong1, particle;
-    public bool activateme = false;
+    public Button btn1, btn2, btn3, btn4;
+    public GameObject active1, active2, active3, active4, Wrong1;
+
 
     public AudioSource soundSource;
+    public AudioSource soundSource1;
 
+    public bool activateme = false;
     public bool isWin = false;
 
 
@@ -27,18 +29,15 @@ public class JigsawManager : MonoBehaviour {
 
     public void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "layer1" )
+        if (collider.gameObject.tag == "layer1" && collider.gameObject.tag == "P1")
         {
             if (activateme == false)
             {
-                layer1.SetActive(false);
-                particle.SetActive(false);
-               
+                active1.SetActive(false);
             }
             else
             {
-                layer1.SetActive(true);
-                particle.SetActive(true);
+                active1.SetActive(true);
                 soundSource.Play();
                 Destroy(collider.gameObject);
             }
@@ -48,14 +47,12 @@ public class JigsawManager : MonoBehaviour {
         {
             if (activateme == false)
             {
-                layer2.SetActive(false);
-                particle.SetActive(false);
+                active2.SetActive(false);
 
             }
             else
             {
-                layer2.SetActive(true);
-                particle.SetActive(true);
+                active2.SetActive(true);
                 soundSource.Play();
                 Destroy(collider.gameObject);
             }
@@ -65,14 +62,11 @@ public class JigsawManager : MonoBehaviour {
         {
             if (activateme == false)
             {
-                layer3.SetActive(false);
-                particle.SetActive(false);
-
+                active3.SetActive(false);
             }
             else
             {
-                layer3.SetActive(true);
-                particle.SetActive(true);
+                active3.SetActive(true);
                 soundSource.Play();
                 Destroy(collider.gameObject);
             }
@@ -81,14 +75,11 @@ public class JigsawManager : MonoBehaviour {
         {
             if (activateme == false)
             {
-                layer4.SetActive(false);
-                particle.SetActive(false);
-
+                active4.SetActive(false);
             }
             else
             {
-                layer4.SetActive(true);
-                particle.SetActive(true);
+                active4.SetActive(true);
                 soundSource.Play();
                 Destroy(collider.gameObject);
             }
@@ -99,15 +90,14 @@ public class JigsawManager : MonoBehaviour {
             if (activateme == false)
             {
                 Wrong1.SetActive(false);
-                particle.SetActive(false);
-
             }
             else
             {
                 Wrong1.SetActive(true);
-                particle.SetActive(true);
                 soundSource.Play();
+                soundSource1.Play();
                 Destroy(collider.gameObject);
+                // StartCoroutine("End");
             }
         }
         
@@ -115,11 +105,11 @@ public class JigsawManager : MonoBehaviour {
 
     void CheckActivePieces() //winning condition
     {
-        //if all pieces is active you win
-        if (layer1.activeInHierarchy == true && layer2.activeInHierarchy == true && layer3.activeInHierarchy == true && layer4.activeInHierarchy == true)
+      
+        if (active1.activeInHierarchy == true && active2.activeInHierarchy == true && active3.activeInHierarchy == true && active4.activeInHierarchy == true)
         {
             
-            isWin = true;//if all pieces is active you win
+            isWin = true;       //if all pieces is active you win
            // StartCoroutine("Wait");
         }
         else
@@ -128,9 +118,17 @@ public class JigsawManager : MonoBehaviour {
         }
     }
 
-    //private IEnumerator Wait()
+    //private IEnumerator Wait() //Next scene
     //{
-    //    yield return new WaitForSeconds(3.0f);
+    //    yield return new WaitForSeconds(2.0f);
+
+    //    SceneManager.LoadScene("");
+
+    //}
+
+    //private IEnumerator End()  //End Scene
+    //{
+    //    yield return new WaitForSeconds(2.0f);
 
     //    SceneManager.LoadScene("");
 
