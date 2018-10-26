@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ColorResult : MonoBehaviour {
 
-    public ParticleSystem blue;
-    public ParticleSystem red;
-    public ParticleSystem green;
+    //public GameObject r;
+    //public GameObject g;
+    //public GameObject b;
+    public Animator anim; //pocong
 
     int currentQuestion;
     int winScore = 0;
@@ -53,6 +54,7 @@ public class ColorResult : MonoBehaviour {
                     break;
                 case "Blue":
                     print("Ddaeng!");
+                    anim.SetBool("Lose", true);
                     break;
                 default:
                     print("Ddaeng!");
@@ -74,6 +76,7 @@ public class ColorResult : MonoBehaviour {
             {
                 case "Red":
                     //ResultColor(0);
+                    anim.SetBool("Lose", true);
                     print("Ddaeng!");
                     break;
                 case "Green":
@@ -112,6 +115,7 @@ public class ColorResult : MonoBehaviour {
                     //run some magic smoke etc...
                     break;
                 case "Blue":
+                    anim.SetBool("Lose", true);
                     print("Ddaeng!");
                     break;
                 default:
