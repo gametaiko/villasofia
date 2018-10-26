@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Playables;
 public class FlashFound : MonoBehaviour {
 
     public string scene;
     public float delay = 2;
     private bool one;
+
+    public PlayableDirector playableDirector1;
+    public PlayableDirector playableDirector2;
+
     // Update is called once per frame
 
     private void Start()
     {
+        if (playableDirector1 != null) playableDirector1.Play();
         StartCoroutine(ScanHantu());
     }
 
@@ -48,6 +53,8 @@ public class FlashFound : MonoBehaviour {
 
     IEnumerator changeScene()
     {
+        if (playableDirector1 != null) playableDirector1.Stop();
+        if (playableDirector2 != null) playableDirector1.Play();
         yield return new WaitForSeconds(delay);
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
