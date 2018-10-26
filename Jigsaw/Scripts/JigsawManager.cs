@@ -12,7 +12,6 @@ public class JigsawManager : MonoBehaviour {
 
 
     public AudioSource soundSource;
-    public AudioSource soundSource1;
 
     public bool activateme = false;
     public bool isWin = false;
@@ -95,7 +94,6 @@ public class JigsawManager : MonoBehaviour {
             {
                 Wrong1.SetActive(true);
                 soundSource.Play();
-                soundSource1.Play();
                 Destroy(collider.gameObject);
                 // StartCoroutine("End");
             }
