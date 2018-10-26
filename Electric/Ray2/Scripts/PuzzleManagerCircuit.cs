@@ -12,6 +12,8 @@ public class PuzzleManagerCircuit : MonoBehaviour {
     private bool hasFailed = false;
 
     bool wireRed, wireBlue, wireBlack = false;
+
+    public ParticleSystem sparks;
 	
 	void Start () {
         Name1 = "";
@@ -67,8 +69,8 @@ public class PuzzleManagerCircuit : MonoBehaviour {
             color2 = "";
 
             //Fail condition
-            hasFailed = true;
-        
+            //hasFailed = true;
+            //StartCoroutine(LoseTransitionCountdown(delay));
         }
     }
 
@@ -85,6 +87,7 @@ public class PuzzleManagerCircuit : MonoBehaviour {
 
             GameObject CircuitRed = GameObject.Find("WireRed");
             CircuitRed.GetComponent<Renderer>().enabled = true;
+            Instantiate(sparks, transform.position, transform.rotation);
             wireRed = true;
         }
 
@@ -121,12 +124,18 @@ public class PuzzleManagerCircuit : MonoBehaviour {
         if(wireRed && wireBlue && wireBlack == true)
         {
             print("You win!");
-            // StartCoroutine(TransitionCountdown(delay));
+            // StartCoroutine(WinTransitionCountdown(delay));
         }
     }
 
 
-    IEnumerator TransitionCountdown(float delay)
+    IEnumerator WinTransitionCountdown(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        //SceneManager.LoadScene("");
+    }
+
+    IEnumerator LoseTransitionCountdown(float delay)
     {
         yield return new WaitForSeconds(delay);
         //SceneManager.LoadScene("");
